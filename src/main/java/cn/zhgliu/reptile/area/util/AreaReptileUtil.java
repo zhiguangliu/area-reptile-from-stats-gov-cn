@@ -55,8 +55,8 @@ public class AreaReptileUtil {
         logger.debug("获取省份{}个", provinceList.size());
 
         for (AreaNode province : provinceList) {
-            int c = count.addAndGet(3);
-            if (DEBUG_MODE && c > 1) break;
+            int c = count.addAndGet(1);
+            if (DEBUG_MODE && c > 2) break;
             getNodeList(province, targetLevel);
         }
 
