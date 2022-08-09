@@ -13,16 +13,16 @@
 package cn.zhgliu.reptile.area.consts;
 
 public enum AreaLevel {
-    LV1(1, "province"),
-    LV2(1, "city"),
-    LV3(1, "county"),
-    LV4(1, "town"),
-    LV5(1, "village");
+    PROVINCE(1, "province"),
+    CITY(2, "city"),
+    COUNTY(3, "county"),
+    TOWN(4, "town"),
+    VILLAGE(5, "village");
 
     private Integer levelCode;
     private String levelName;
 
-    private AreaLevel(Integer levelCode, String levelName) {
+    AreaLevel(Integer levelCode, String levelName) {
         this.levelCode = levelCode;
         this.levelName = levelName;
     }
@@ -31,11 +31,41 @@ public enum AreaLevel {
         return levelCode;
     }
 
+    public static AreaLevel nextLevel(AreaLevel areaLevel){
+        switch (areaLevel){
+            case PROVINCE:
+                return CITY;
+            case CITY:
+                return COUNTY;
+            case COUNTY:
+                return TOWN;
+            case TOWN:
+                return VILLAGE;
+            default:
+                throw new RuntimeException("Can not get next level of LV5");
+        }
+    }
+
+    public AreaLevel nextLevel(){
+        switch (this){
+            case PROVINCE:
+                return CITY;
+            case CITY:
+                return COUNTY;
+            case COUNTY:
+                return TOWN;
+            case TOWN:
+                return VILLAGE;
+            default:
+                throw new RuntimeException("Can not get next level of LV5");
+        }
+    }
+
     public String getLevelName() {
         return levelName;
     }
 
     public static void main(String[] args) {
-        System.out.println(AreaLevel.LV1.getLevelCode());
+        System.out.println(AreaLevel.PROVINCE.getLevelCode());
     }
 }

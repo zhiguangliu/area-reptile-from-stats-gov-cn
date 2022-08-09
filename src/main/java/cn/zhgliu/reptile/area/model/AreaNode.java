@@ -19,11 +19,17 @@ import java.util.List;
 public class AreaNode {
     private String code;
 
+    private String pCode;
+
     private String name;
 
     private AreaLevel level;
 
     private List<AreaNode> children;
+
+    private String currentDetailUrl;
+
+    private String villageCategoryCode;
 
     public AreaNode(String code, String name, AreaLevel level) {
         this.code = code;
@@ -64,6 +70,33 @@ public class AreaNode {
 
     public AreaNode setChildren(List<AreaNode> children) {
         this.children = children;
+        return this;
+    }
+
+    public String getVillageCategoryCode() {
+        return villageCategoryCode;
+    }
+
+    public AreaNode setVillageCategoryCode(String villageCategoryCode) {
+        this.villageCategoryCode = villageCategoryCode;
+        return this;
+    }
+
+    public String getCurrentDetailUrl() {
+        return currentDetailUrl;
+    }
+
+    public AreaNode setCurrentDetailUrl(String currentDetailUrl) {
+        this.currentDetailUrl = currentDetailUrl;
+        return this;
+    }
+
+    public String getpCode() {
+        return pCode;
+    }
+
+    public AreaNode setpCode(String pCode) {
+        this.pCode = pCode;
         return this;
     }
 }
