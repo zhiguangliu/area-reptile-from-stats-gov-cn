@@ -6,7 +6,7 @@
 
     <groupId>cn.zhgliu</groupId>
     <artifactId>area-reptile-from-stats-gov-cn</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>Easy Data Permission</name>
     <description>抓取并整理国家统计局网站上的行政区划数据。支持按年份抓取，输出可以为code-pCode的flatten形式或者主子嵌套的json形式</description>
     <url>https://github.com/zhiguangliu/area-reptile-from-stats-gov-cn</url>
